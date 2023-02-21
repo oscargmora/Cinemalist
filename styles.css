@@ -1,0 +1,123 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html,body {
+    height: 100%;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: roboto-italics;
+    src: url(fonts/Roboto/Roboto-LightItalic.ttf);
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(fonts/Roboto/Roboto-Light.ttf);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
+h1 {
+    font-family: roboto-italics;
+    font-size: 2.5em;
+}
+
+header>button {
+    border: none;
+    border-radius: 8px;
+    width: 5em;
+    font-family: roboto;
+}
+
+header>button:hover {
+    cursor: pointer;
+    background-color: rgb(213, 202, 202);
+}
+
+main {
+    background-color: #f0eef1;
+    box-shadow: inset 0 7px 9px -7px rgba(86, 2, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 85%;
+}
+
+.add-book {
+    border: none;
+    background: none;
+    border-radius: 6px;
+    margin-top: 80px;
+    font-size: 1.5em;
+    font-family: roboto;
+    height: 2em;
+    width: auto;
+}
+
+.add-book:hover {
+    cursor: pointer;
+    background-color: rgb(197, 181, 181);
+    border-radius: 6px;
+}
+
+footer {
+    background-color: #f0eef1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: roboto;
+}
