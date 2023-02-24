@@ -1,12 +1,14 @@
-const addBook = document.getElementsByClassName("add-book").addEventListener("click", addBookInfo);
-const logIn = document.getElementsByClassName("log-in");
-
-let myLibrary = [];
-
-function Book() {
-  // the constructor...
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
 }
 
-function addBookToLibrary() {
-  // do stuff here
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+window.onclick = function (event) {
+  let modal = document.getElementById("myForm");
+  if (event.target == modal) {
+    closeForm();
+  }
 }

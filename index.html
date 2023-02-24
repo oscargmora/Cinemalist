@@ -15,7 +15,21 @@
         <button class="log-in">Log-In</button>
     </header>
     <main>
-        <button class="add-book" id="add-book">+ Add Book</button>
+        <button class="open-button" onclick="openForm()">+ Add Book</button>
+        <div class="form-popup" id="myForm">
+            <form class="form-container">
+                <input type="text" id="title" name="title" placeholder="Title" required>
+                <input type="text" id="author" name="author" placeholder="Author" required>
+                <input type="number" id="pages" name="pages" placeholder="Number of Pages" required>
+                <div class="checkboxContainer">
+                    <label for="read">Have you read it?</label>
+                    <input type="checkbox" id="read" name="read">
+                </div>
+                <div class="submit-button">
+                    <button id="submit">Submit</button>
+                </div>
+            </form>
+        </div>
     </main>
     <footer>
         <p>Copyright © 2023 Oscar Mora</p>

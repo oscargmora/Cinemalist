@@ -97,7 +97,7 @@ main {
     min-height: 85%;
 }
 
-.add-book {
+.open-button {
     border: none;
     background: none;
     border-radius: 6px;
@@ -108,7 +108,7 @@ main {
     width: auto;
 }
 
-.add-book:hover {
+.open-button:hover {
     cursor: pointer;
     background-color: rgb(197, 181, 181);
     border-radius: 6px;
@@ -120,4 +120,74 @@ footer {
     justify-content: center;
     align-items: center;
     font-family: roboto;
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, 5%);
+    z-index: 9;
+    border-radius: 10px;
+}
+
+.form-container {
+    max-width: 280px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    font-family: roboto;
+}
+
+.form-container input[type=text], .form-container input[type=number] {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 20px 0;
+    border: none;
+    background: #eee;
+    border-radius: 10px;
+    font-family: roboto;
+}
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.submit-button {
+    padding-top: 20px;
+    display: flex;
+}
+
+#submit {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+    border-radius: 10px;
+    font-family: roboto;
+}
+
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
+
+.checkboxContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+#read:hover {
+    accent-color: #04AA6D;
+}
+
+#read {
+    accent-color: #04AA6D;
 }
