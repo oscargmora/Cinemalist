@@ -50,6 +50,7 @@ table {
 html,body {
     height: 100%;
     width: 100vw;
+    background-color: #f0eef1;
 }
 
 @font-face {
@@ -63,6 +64,7 @@ html,body {
 }
 
 header {
+    background-color: white;
     display: flex;
     justify-content: space-between;
     padding-top: 1em;
@@ -89,15 +91,13 @@ header>button:hover {
 }
 
 main {
-    background-color: #f0eef1;
     box-shadow: inset 0 7px 9px -7px rgba(86, 2, 255, 0.4);
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    min-height: 85%;
 }
 
-.open-button {
+#open-button {
     border: none;
     background: none;
     border-radius: 6px;
@@ -108,31 +108,33 @@ main {
     width: auto;
 }
 
-.open-button:hover {
+#open-button:hover {
     cursor: pointer;
     background-color: rgb(197, 181, 181);
     border-radius: 6px;
 }
 
 footer {
-    background-color: #f0eef1;
+    position: absolute;
+    bottom: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-family: roboto;
+    justify-content: center;
+    width: 100%;
+    font-style: roboto;
 }
 
 .form-popup {
     display: none;
     position: fixed;
     left: 50%;
-    top: 20%;
+    top: 15%;
     transform: translate(-50%, 5%);
     z-index: 9;
     border-radius: 10px;
 }
 
-.form-container {
+#form-container {
     max-width: 280px;
     padding: 20px;
     background-color: #fff;
@@ -140,7 +142,7 @@ footer {
     font-family: roboto;
 }
 
-.form-container input[type=text], .form-container input[type=number] {
+#form-container input[type=text], #form-container input[type=number] {
     width: 90%;
     padding: 15px;
     margin: 5px 0 20px 0;
@@ -150,9 +152,17 @@ footer {
     font-family: roboto;
 }
 
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+#form-container input[type=text]:focus, #form-container input[type=password]:focus {
     background-color: #ddd;
     outline: none;
+}
+
+#form-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.3em;
+    font-size: 2em;
 }
 
 .submit-button {
@@ -173,7 +183,7 @@ footer {
     font-family: roboto;
 }
 
-.form-container .btn:hover, .open-button:hover {
+#form-container .btn:hover, .open-button:hover {
     opacity: 1;
 }
 
@@ -190,4 +200,36 @@ footer {
 
 #read {
     accent-color: #04AA6D;
+}
+
+#book-card-container {
+    margin: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.newBookCard {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5em;
+    width: 30%;
+    font-family: roboto;
+    border-radius: 10px;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 }

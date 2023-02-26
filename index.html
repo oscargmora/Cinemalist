@@ -12,28 +12,35 @@
         <div class="logo">
             <h1>Library</h1>
         </div>
-        <button class="log-in">Log-In</button>
+        <button class="log-in">Log In</button>
     </header>
     <main>
-        <button class="open-button" onclick="openForm()">+ Add Book</button>
-        <div class="form-popup" id="myForm">
-            <form class="form-container">
-                <input type="text" id="title" name="title" placeholder="Title" required>
-                <input type="text" id="author" name="author" placeholder="Author" required>
-                <input type="number" id="pages" name="pages" placeholder="Number of Pages" required>
-                <div class="checkboxContainer">
-                    <label for="read">Have you read it?</label>
-                    <input type="checkbox" id="read" name="read">
-                </div>
-                <div class="submit-button">
-                    <button id="submit">Submit</button>
-                </div>
-            </form>
+        <button id="open-button" onclick="openForm()">+ Add Book</button>
+        <div class="modalDialog" id="openModal">
+            <div class="form-popup" id="myForm">
+                <form id="form-container">
+                    <h1 id="form-header">Add New Book</h1>
+                    <input type="text" id="title" name="title" placeholder="Title" required>
+                    <input type="text" id="author" name="author" placeholder="Author" required>
+                    <input type="number" id="pages" name="pages" placeholder="Number of Pages" required>
+                    <div class="checkboxContainer">
+                        <label for="read">Have you read it?</label>
+                        <input type="checkbox" id="read" name="read">
+                    </div>
+                    <div class="submit-button">
+                        <button id="submit" onclick="submitForm()">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </main>
-    <footer>
+    <card-container>
+        <div id="book-card-container"></div>
+    </card-container>
+    <footer id="footer">
         <p>Copyright © 2023 Oscar Mora</p>
     </footer>
+    <div class="overlay" id="overlay"></div>
     <script src="javascript.js"></script>
 </body>
 </html>
