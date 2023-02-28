@@ -33,34 +33,32 @@ function addBookToLibrary() {
   let author = document.getElementById("author");
   let pages = document.getElementById("pages");
   let read = document.getElementById("read");
-  let book = new Book(title.value, author.value, pages.value, read.value);
+  let book = new Book(title.value, author.value, pages.value, read.checked);
   myLibrary.push(book);
   console.log(myLibrary);
 }
 
-function submitForm() {
-  event.preventDefault();
+const submitForm = (e) => {
+  e.preventDefault();
   closeForm();
   addBookToLibrary();
   displayLibrary();
   document.getElementById("form-container").reset();
 }
 
+myForm.onsubmit = submitForm;
+
 function displayLibrary() {
   for (let i = 0; i < myLibrary.length; i++) {
     let newBookCard = document.createElement("div");
     newBookCard.classList.add("newBookCard");
-    let newTitleCard = document.createElement("div");
-    newTitleCard.classList.add("newTitleCard");
-    let newAuthorCard = document.createElement("div");
-    newTitleCard.classList.add("newAuthorCard");
-    let newPagesCard = document.createElement("div");
-    newTitleCard.classList.add("newPagesCard");
-    let newReadCard = document.createElement("div");
-    newTitleCard.classList.add("newReadCard");
+    let newTitleCard = document.createElement("h1");
+    let newAuthorCard = document.createElement("p");
+    let newPagesCard = document.createElement("p");
+    let newReadCard = document.createElement("button");
     let newTitle = document.createTextNode(myLibrary[i].title);
     let newAuthor = document.createTextNode(myLibrary[i].author);
-    let newPages = document.createTextNode(myLibrary[i].pages);
+    let newPages = document.createTextNode(`${myLibrary[i].pages} pages`);
     let newRead = document.createTextNode(myLibrary[i].read);
     newTitleCard.appendChild(newTitle);
     newAuthorCard.appendChild(newAuthor);
@@ -70,7 +68,41 @@ function displayLibrary() {
     newBookCard.appendChild(newAuthorCard);
     newBookCard.appendChild(newPagesCard);
     newBookCard.appendChild(newReadCard);
+    newTitleCard.classList.add("newTitleCard");
+    newAuthorCard.classList.add("newAuthorCard");
+    newPagesCard.classList.add("newPagesCard");
+    newReadCard.classList.add("newReadCard");
     let currentBookCard = document.getElementById("book-card-container");
     currentBookCard.appendChild(newBookCard);
   }
 }
+
+/* Possible checkbox checkers
+function readCheckbox() {
+  read.addEventListener('change', (event) => {
+  if (event.currentTarget.checked) {
+    newReadCard.textContent = "Read";
+    newReadCard.classList.add("newReadCardGreen");
+    newReadCard.classList.remove("NewReadCardRed")
+    console.log("Checked");
+  } else {
+    newReadCard.textContent = "Not Read";
+    newReadCard.classList.add("newReadCardRed");
+    newReadCard.classList.remove("newReadCardGreen");
+    console.log("Not Checked");
+  }
+})
+}
+
+if (myLibrary.find(e => e.read === false)) {
+  newReadCard.textContent = "Not Read";
+  newReadCard.classList.add("newReadCardRed");
+  newReadCard.classList.remove("newReadCardGreen");
+  console.log("Not Checked");
+  } else {
+    newReadCard.textContent = "Read";
+    newReadCard.classList.add("newReadCardGreen");
+    newReadCard.classList.remove("NewReadCardRed")
+    console.log("Checked");
+  }
+  */
