@@ -121,7 +121,7 @@ footer {
     align-items: center;
     justify-content: center;
     width: 100%;
-    font-style: roboto;
+    font-family: roboto;
 }
 
 .form-popup {
@@ -249,17 +249,39 @@ footer {
     margin-right: 1.4em;
     border-radius: 5px;
     border: none;
+    font-family: roboto;
 }
 
 .newReadCardRed {
-    background-color: red;
+    background-color: rgba(245, 0, 0, 0.583);
 }
 
 .newReadCardGreen {
-    background-color: green;
+    background-color: rgb(68, 197, 68);
 }
 
 .newReadCard:hover {
     cursor: pointer;
-    background-color: rgb(227, 221, 221);
+    background-color: rgba(245, 0, 0, 0.684);
+}
+
+.newReadCardGreen:hover {
+    cursor: pointer;
+    background-color: rgb(29, 187, 29);
+}
+
+.newRemoveCard {
+    padding: 0.6em;
+    margin-bottom: 0.8em;
+    margin-top: 0.5em;
+    margin-left: 1.4em;
+    margin-right: 1.4em;
+    border-radius: 5px;
+    border: none;
+    font-family: roboto;
+}
+
+.newRemoveCard:hover {
+    cursor: pointer;
+    background-color: rgb(226, 226, 226);
 }
