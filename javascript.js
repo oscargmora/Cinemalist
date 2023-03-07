@@ -35,6 +35,7 @@ window.onclick = function (event) {
   }
 }
 
+//Gets form inputs to store book into the array
 function addBookToLibrary() {
   let title = document.getElementById("title");
   let author = document.getElementById("author");
@@ -42,20 +43,9 @@ function addBookToLibrary() {
   let read = document.getElementById("read");
   book = new Book(title.value, author.value, pages.value, read.checked);
   myLibrary.push(book);
-  console.log(myLibrary);
 }
 
-
-const submitForm = (e) => {
-  e.preventDefault();
-  closeForm();
-  addBookToLibrary();
-  displayLibrary();
-  document.getElementById("form-container").reset();
-}
-
-myForm.onsubmit = submitForm;
-
+//Create book cards
 function displayLibrary() {
   resetBooksGrid();
   for (let i = 0; i < myLibrary.length; i++) {
@@ -65,16 +55,6 @@ function displayLibrary() {
     let newPagesCard = document.createElement("p");
     let newReadCard = document.createElement("button");
     let newRemoveCard = document.createElement("button");
-
-    if (read.checked === true) {
-      newReadCard.textContent = "Read";
-      newReadCard.classList.add("newReadCardGreen");
-      newReadCard.classList.remove("NewReadCardRed");
-    } else {
-      newReadCard.textContent = "Not Read";
-      newReadCard.classList.add("newReadCardRed");
-      newReadCard.classList.remove("newReadCardGreen");
-    };
 
     newBookCard.classList.add("newBookCard");
     newTitleCard.classList.add("newTitleCard");
@@ -89,8 +69,19 @@ function displayLibrary() {
 
     let newTitle = document.createTextNode(myLibrary[i].title);
     let newAuthor = document.createTextNode(myLibrary[i].author);
-    let newPages = document.createTextNode(`${myLibrary[i].pages} pages`);
+    let newPages = document.createTextNode(`${myLibrary[i].pages} Hours`);
     let newRemove = document.createTextNode("Remove");
+    
+    //Change id of read button depending on whether or not the checkbox was checked in the form
+    if (myLibrary[i].read === true) {
+      newReadCard.textContent = "Watched";
+      newReadCard.removeAttribute("id");
+      newReadCard.setAttribute("id", "newReadCardGreen");
+    } else {
+      newReadCard.textContent = "Not Watched";
+      newReadCard.removeAttribute("id");
+      newReadCard.setAttribute("id", "newReadCardRed");
+    };
 
     newTitleCard.appendChild(newTitle);
     newAuthorCard.appendChild(newAuthor);
@@ -104,27 +95,36 @@ function displayLibrary() {
     newBookCard.appendChild(newRemoveCard);
 
     container.appendChild(newBookCard);
+    
+    //Changes read status whenever read button is pressed
+    function changeReadStatus(e) {
+      if (e.target.innerText == 'Watched') {
+          e.target.textContent = "Not Watched";
+          e.target.removeAttribute("id");
+          e.target.setAttribute("id", "newReadCardRed");
+          myLibrary[i].read = false;
+      } else if (e.target.innerText == 'Not Watched') {
+          e.target.textContent = "Watched";
+          e.target.removeAttribute("id");
+          e.target.setAttribute("id", "newReadCardGreen");
+          myLibrary[i].read = true;
+      }
+    }
   };
 }
 
-function changeReadStatus(e) {
-  	if (e.target.innerText == 'Read') {
-      e.target.textContent = "Not Read";
-      e.target.classList.add("newReadCardRed");
-      e.target.classList.remove("newReadCardGreen");
-      book.read = false;
-      console.log(myLibrary);
-	  } else if (e.target.innerText == 'Not Read') {
-      e.target.textContent = "Read";
-      e.target.classList.add("newReadCardGreen");
-      e.target.classList.remove("newReadCardRed");
-      book.read = true;
-      console.log(myLibrary);
-  }
+const submitForm = (e) => {
+  e.preventDefault();
+  closeForm();
+  addBookToLibrary();
+  displayLibrary();
+  document.getElementById("form-container").reset();
 }
+
+myForm.onsubmit = submitForm;
 
 function removeBook(e) {
       let objectID = e.target.getAttribute("data-id");
-      myLibrary = myLibrary.filter((Book) => Book.id != objectID); //Ask ChatGPT what's going on here
+      myLibrary = myLibrary.filter((Book) => Book.id != objectID);
       displayLibrary();
 }
