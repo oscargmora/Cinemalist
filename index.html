@@ -15,14 +15,15 @@
         <button class="log-in">Log In</button>
     </header>
     <main>
+      <non-book-cards>
         <button id="open-button" onclick="openForm()">+ Add Book</button>
         <div class="modalDialog" id="openModal">
             <div class="form-popup" id="myForm">
                 <form id="form-container">
-                    <h1 id="form-header">Add New Book</h1>
+                    <h1 id="form-header">Add New Movie</h1>
                     <input type="text" id="title" name="title" placeholder="Title" required>
                     <input type="text" id="author" name="author" placeholder="Author" required>
-                    <input type="number" id="pages" name="pages" placeholder="Number of Pages" required>
+                    <input type="number" id="pages" name="pages" placeholder="Pages" required>
                     <div class="checkboxContainer">
                         <label for="read">Have you read it?</label>
                         <input type="checkbox" id="read" name="read">
@@ -33,10 +34,11 @@
                 </form>
             </div>
         </div>
-    </main>
+      </non-book-cards>
     <card-container>
         <div id="book-card-container"></div>
     </card-container>
+    </main>
     <footer id="footer">
         <p>Copyright © 2023 Oscar Mora</p>
     </footer>
