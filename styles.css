@@ -89,6 +89,7 @@ header>button {
     border-radius: 8px;
     width: 5em;
     font-family: roboto;
+    color: black;
 }
 
 header>button:hover {
@@ -104,10 +105,10 @@ main {
 }
 
 non-book-cards {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #open-button {
@@ -120,6 +121,7 @@ non-book-cards {
     font-family: roboto;
     height: 2em;
     width: auto;
+    color: black;
 }
 
 #open-button:hover {
@@ -255,6 +257,7 @@ non-book-cards {
     border-radius: 5px;
     border: none;
     font-family: roboto;
+    color: black;
 }
 
 #read {
@@ -292,6 +295,7 @@ non-book-cards {
     border-radius: 5px;
     border: none;
     font-family: roboto;
+    color: black;
 }
 
 .newRemoveCard:hover {
