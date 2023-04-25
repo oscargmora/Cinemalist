@@ -1,48 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Cinemalist</title>
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <h1>Cinemalist</h1>
-        </div>
-        <button class="log-in">Log In</button>
-    </header>
-    <main>
-      <non-book-cards>
-        <button id="open-button" onclick="openForm()">+ Add Movie</button>
-        <div class="modalDialog" id="openModal">
-            <div class="form-popup" id="myForm">
-                <form id="form-container">
-                    <h1 id="form-header">Add New Movie</h1>
-                    <input type="text" id="title" name="title" placeholder="Film Title" required>
-                    <input type="text" id="author" name="author" placeholder="Notable Actors" required>
-                    <input type="number" step="0.01" id="pages" name="pages" placeholder="Runtime" required>
-                    <div class="checkboxContainer">
-                        <label for="read">Have you seen it?</label>
-                        <input type="checkbox" id="read" name="read">
-                    </div>
-                    <div class="submit-button">
-                        <button id="submit">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-      </non-book-cards>
-    <card-container>
-        <div id="book-card-container"></div>
-    </card-container>
-    </main>
-    <footer id="footer">
-        <p>Copyright © 2023 Oscar Mora</p>
-    </footer>
-    <div class="overlay" id="overlay"></div>
-    <script src="javascript.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>Cinemalist</title>
+	</head>
+	<body>
+		<header>
+			<div class="logo">
+				<h1>Cinemalist</h1>
+			</div>
+			<button class="log-in">Log In</button>
+		</header>
+		<main>
+			<non-book-cards>
+				<button id="open-button" onclick="openForm()">+ Add Movie</button>
+				<div class="modalDialog" id="openModal">
+					<div class="form-popup" id="myForm">
+						<form id="form-container">
+							<h1 id="form-header">Add New Movie</h1>
+							<input
+								type="text"
+								id="title"
+								name="title"
+								placeholder="Film Title"
+								required />
+							<input
+								type="text"
+								id="author"
+								name="author"
+								placeholder="Notable Actors"
+								required />
+							<input
+								type="number"
+								step="0.01"
+								id="pages"
+								name="pages"
+								placeholder="Runtime"
+								required />
+							<div class="checkboxContainer">
+								<label for="read">Have you seen it?</label>
+								<input type="checkbox" id="read" name="read" />
+							</div>
+							<div class="submit-button">
+								<button id="submit">Submit</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</non-book-cards>
+			<card-container>
+				<div id="book-card-container"></div>
+			</card-container>
+		</main>
+		<footer>
+			<a href="https://github.com/oscargmora" id="github-link">
+				<p>Copyright © 2023 oscargmora</p>
+			</a>
+		</footer>
+		<div class="overlay" id="overlay"></div>
+		<script src="javascript.js"></script>
+	</body>
 </html>
